@@ -41,7 +41,7 @@ public class TaskController {
         }
     }
 
-    @PatchMapping("/update")
+    @PutMapping("/update")
     public  ResponseEntity<TaskModel> updateTask(@RequestBody TaskModel task){
         try{
             return ResponseEntity.ok(taskService.updateTask(task));

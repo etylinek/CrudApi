@@ -40,6 +40,6 @@ public class TaskModel {
     private TaskStatusType taskStatus;
 
     @ManyToOne
-    private ProjectModel projectModel;
+    private ProjectModel project;
 
 }

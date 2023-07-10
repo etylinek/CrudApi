@@ -35,7 +35,7 @@ public class ProjectModel {
     @Column
     private Date finishDate;
 
-    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "projectmodel", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "project", fetch = FetchType.EAGER)
     private Set<TaskModel> tasks = new HashSet<>();
 
 }

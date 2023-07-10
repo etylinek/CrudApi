@@ -18,11 +18,11 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "name")
     String name;
-    @Column
-    String surName;
-    @Column
+    @Column(name = "surname")
+    String surname;
+    @Column(name = "email")
     String email;
 
 

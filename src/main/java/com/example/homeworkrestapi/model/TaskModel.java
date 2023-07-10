@@ -24,19 +24,19 @@ public class TaskModel {
 //    @Column
 //    private Long idProject;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "description")
     private String description;
 
-    @Column
+    @Column(name = "start_tasks_date")
     private Date startTasksDate;
 
-    @Column
+    @Column(name = "finish_task_date")
     private Date finishTaskDate;
 
-    @Column
+    @Column(name = "task_status")
     private TaskStatusType taskStatus;
 
     @ManyToOne

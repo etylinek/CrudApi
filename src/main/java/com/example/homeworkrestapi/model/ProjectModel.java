@@ -23,16 +23,16 @@ public class ProjectModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "description")
     private String description;
 
-    @Column
+    @Column(name = "start_date")
     private Date startDate;
 
-    @Column
+    @Column(name = "finish_date")
     private Date finishDate;
 
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "project", fetch = FetchType.EAGER)

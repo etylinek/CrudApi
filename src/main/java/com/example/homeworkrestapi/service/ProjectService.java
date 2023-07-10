@@ -25,8 +25,8 @@ public class ProjectService {
         return projectRepository.findById(id);
     }
 
-    public void addProject(ProjectModel project) {
-        projectRepository.save(project);
+    public ProjectModel addProject(ProjectModel project) {
+       return projectRepository.save(project);
     }
 
     public ProjectModel updateProject(ProjectModel project) {

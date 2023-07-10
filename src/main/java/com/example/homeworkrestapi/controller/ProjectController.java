@@ -3,7 +3,6 @@ package com.example.homeworkrestapi.controller;
 
 import com.example.homeworkrestapi.model.ProjectModel;
 import com.example.homeworkrestapi.service.ProjectService;
-import com.example.homeworkrestapi.utils.errors.ProjectNotFoundExeption;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +29,7 @@ public class ProjectController {
         }
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ProjectModel> getProjectById(@PathVariable Long id) {
         return projectService.getProjectById(id)
                 .map(ResponseEntity::ok)
@@ -41,8 +40,7 @@ public class ProjectController {
     @PostMapping
     public ResponseEntity<ProjectModel> addProject(@RequestBody ProjectModel project) {
         try {
-            projectService.addProject(project);
-            return ResponseEntity.ok(project);
+            return ResponseEntity.ok(projectService.addProject(project));
         } catch (Exception e) {
             return ResponseEntity.internalServerError().build();
         }
@@ -58,7 +56,7 @@ public class ProjectController {
         }
     }
 
-    @DeleteMapping("del/{id}")
+    @DeleteMapping("/del/{id}")
     public ResponseEntity<Void> deleteProject(@PathVariable Long id){
         try {
             projectService.deleteProject(id);
